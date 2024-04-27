@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id='action_gestion_rh_employe' model='ir.actions.act_window'>
+        <field name='name'>Employe</field>
+        <field name='type'>ir.actions.act_window</field>
+        <field name='res_model'>gestion.rh.employe</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+    <record id='action_gestion_rh_note_frais' model='ir.actions.act_window'>
+        <field name='name'>Note Frais</field>
+        <field name='type'>ir.actions.act_window</field>
+        <field name='res_model'>gestion.rh.notefrais</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+    <record id='action_gestion_rh_poste' model='ir.actions.act_window'>
+        <field name='name'>Poste</field>
+        <field name='type'>ir.actions.act_window</field>
+        <field name='res_model'>gestion.rh.poste</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+    <record id='action_gestion_rh_contrat' model='ir.actions.act_window'>
+        <field name='name'>Contrat</field>
+        <field name='type'>ir.actions.act_window</field>
+        <field name='res_model'>gestion.rh.contrat</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+    <record id='action_gestion_rh_conge' model='ir.actions.act_window'>
+        <field name='name'>Conge</field>
+        <field name='type'>ir.actions.act_window</field>
+        <field name='res_model'>gestion.rh.conge</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+    <record id="employe_tree" model="ir.ui.view">
+        <field name="name">gestion.rh.employe.tree</field>
+        <field name="model">gestion.rh.employe</field>
+        <field name="arch" type="xml">
+            <tree string="employe">
+                <field name="nom"/>
+                <field name="prenom"/>
+                <field name="date_naissance"/>
+                <field name="adresse" />
+                <field name="email_professionnel"/>
+                <field name="telephone"/>
+                <field name="genre"/>
+                <field name="date_embauche"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="employe_form" model="ir.ui.view">
+        <field name="name">gestion.rh.employe.form</field>
+        <field name="model">gestion.rh.employe</field>
+        <field name="arch" type="xml">
+            <form string="employe">
+                <sheet>
+                    <group>                    
+                        <group>
+                            <field name="prenom" />
+                            <field name="nom"/>
+                            <field name="date_naissance"/>
+                            <field name="adresse"/>
+                            <field name="genre"/>
+                        </group>
+                        <group>
+                            <field name="date_embauche"/>
+                            <field name="telephone" />
+                            <field name="email_professionnel"/>
+                        </group>        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="employe_search" model="ir.ui.view">
+        <field name="name">gestion.rh.employe.search</field>
+        <field name="model">gestion.rh.employe</field>
+        <field name="arch" type="xml">
+            <search string="employe">
+                <field name="nom" />
+                <field name="prenom"/>
+                <field name="date_naissance" />
+                <field name="adresse" />
+                <field name="telephone" />
+                <field name="genre" />
+                <field name="date_embauche" />
+            </search>
+        </field>
+    </record>
+
+
+    <menuitem id='menu_employe_root'
+              name='Employe'
+              action='action_gestion_rh_employe'
+              sequence='10'/>
+              
+    <menuitem id='menu_employe_note_frais'
+                name='notefrais'
+                parent='menu_employe_root'
+                action='action_gestion_rh_note_frais'
+                sequence='10'/>
+    <menuitem id='menu_employe_poste'
+                name='Poste'
+                parent='menu_employe_root'
+                action='action_gestion_rh_poste'
+                sequence='10'/>
+    <menuitem id='menu_employe_contrat'
+                name='Contrat'
+                parent='menu_employe_root'
+                action='action_gestion_rh_contrat'
+                sequence='10'/>
+    <menuitem id='menu_employe_conge'
+                name='Conge'
+                parent='menu_employe_root'
+                action='action_gestion_rh_conge'
+                sequence='10'/>
+</odoo>

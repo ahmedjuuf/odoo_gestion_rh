@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="poste_tree" model="ir.ui.view">
+        <field name="name">gestion.rh.poste.tree</field>
+        <field name="model">gestion.rh.poste</field>
+        <field name="arch" type="xml">
+            <tree string="poste">
+                <field name="nom" />
+                <field name="description"/>
+                <field name="statut" />
+                <field name="avantages" />
+                <field name="experience_requise" />
+                <field name="formation_requise" />
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="poste_form" model="ir.ui.view">
+        <field name="name">gestion.rh.poste.form</field>
+        <field name="model">gestion.rh.poste</field>
+        <field name="arch" type="xml">
+            <form string="poste">
+                <sheet>
+                    <group>                    
+                        <group>
+                            <field name="statut" />
+                            <field name="avantages" />
+                            <field name="experience_requise"/>
+                            <field name="formation_requise"/>
+                        </group>
+                        <group>
+                            <field name="description"/>
+                        </group>        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="poste_search" model="ir.ui.view">
+        <field name="name">gestion.rh.poste.search</field>
+        <field name="model">gestion.rh.poste</field>
+        <field name="arch" type="xml">
+            <search string="poste">
+                <field name="nom"/>
+                <field name="description"/>
+                <field name="statut"/>
+                <field name="avantages"/>
+                <field name="experience_requise"/>
+                <field name="formation_requise"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id='action_gestion_rh_poste' model='ir.actions.act_window'>
+        <field name='name'>Poste</field>
+        <field name='type'>ir.actions.act_window</field>
+        <field name='res_model'>gestion.rh.poste</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+
+</odoo>

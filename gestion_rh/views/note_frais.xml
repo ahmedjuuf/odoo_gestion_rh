@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="notefrais_tree" model="ir.ui.view">
+        <field name="name">gestion.rh.notefrais.tree</field>
+        <field name="model">gestion.rh.notefrais</field>
+        <field name="arch" type="xml">
+            <tree string="notefrais">
+                <field name="montant"/>
+                <field name="date"/>
+                <field name="description"/>
+                <field name="statut"/>
+                <field name="commentaire_approbateur"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="note_frais_form" model="ir.ui.view">
+        <field name="name">gestion.rh.notefrais.form</field>
+        <field name="model">gestion.rh.notefrais</field>
+        <field name="arch" type="xml">
+            <form string="notefrais">
+                <sheet>
+                    <group>                    
+                        <field name="montant"/>
+                        <field name="date"/>
+                        <field name="description"/>
+                        <field name="statut"/>
+                        <field name="commentaire_approbateur"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="note_frais_search" model="ir.ui.view">
+        <field name="name">gestion.rh.notefrais.search</field>
+        <field name="model">gestion.rh.notefrais</field>
+        <field name="arch" type="xml">
+            <search string="notefrais">
+                <field name="montant"/>
+                <field name="date"/>
+                <field name="description"/>
+                <field name="statut"/>
+                <field name="commentaire_approbateur"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id='action_gestion_rh_note_frais' model='ir.actions.act_window'>
+        <field name='name'>Note Frais</field>
+        <field name='type'>ir.actions.act_window</field>
+        <field name='res_model'>gestion.rh.notefrais</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+</odoo>

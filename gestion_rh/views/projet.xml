@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="projet_tree" model="ir.ui.view">
+        <field name="name">gestion.rh.projet.tree</field>
+        <field name="model">gestion.rh.projet</field>
+        <field name="arch" type="xml">
+            <tree string="projet">
+                <field name="nom"/>
+                <field name="statut"/>
+                <field name="description"/>
+                <field name="date_debut"/>
+                <field name="date_fin"/>
+                <field name="budget"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="projet_form" model="ir.ui.view">
+        <field name="name">gestion.rh.projet.form</field>
+        <field name="model">gestion.rh.projet</field>
+        <field name="arch" type="xml">
+            <form string="projet">
+                <sheet>
+                    <group>                    
+                        <group>
+                            <field name="nom"/>
+                            <field name="statut"/>
+                            <field name="budget"/>
+                        </group>
+                        <group>
+                            <field name="date_debut"/>
+                            <field name="date_fin"/>
+                            <field name="description"/>
+                        </group>        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id='action_gestion_rh_projet' model='ir.actions.act_window'>
+        <field name='name'>Projet</field>
+        <field name='type'>ir.actions.act_window</field>
+        <field name='res_model'>gestion.rh.projet</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+
+    <record id="projet_search" model="ir.ui.view">
+        <field name="name">gestion.rh.projet.search</field>
+        <field name="model">gestion.rh.projet</field>
+        <field name="arch" type="xml">
+            <search string="projet">
+                <field name="nom"/>
+                <field name="statut"/>
+                <field name="description"/>
+                <field name="date_debut"/>
+                <field name="date_fin"/>
+                <field name="budget"/>
+            </search>
+        </field>
+    </record>
+
+
+    <menuitem id='menu_projet_root'
+                name='Projet'
+                action='action_gestion_rh_projet'
+                sequence='10'/>
+</odoo>

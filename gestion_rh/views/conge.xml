@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="conge_tree" model="ir.ui.view">
+        <field name="name">gestion.rh.conge.tree</field>
+        <field name="model">gestion.rh.conge</field>
+        <field name="arch" type="xml">
+            <tree string="conge">
+                <field name="statut_conge"/>
+                <field name="type_conge"/>
+                <field name="est_paye"/>
+                <field name="date_debut"/>
+                <field name="date_fin"/>
+                <field name="justificatif"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    
+    <record id="conge_form" model="ir.ui.view">
+        <field name="name">gestion.rh.conge.form</field>
+        <field name="model">gestion.rh.conge</field>
+        <field name="arch" type="xml">
+            <form string="conge">
+                <sheet>
+                    <group>    
+                        <group>
+                            <field name="statut_conge"/>
+                            <field name="type_conge"/>
+                            <field name="est_paye"/>
+                        </group> 
+                        <group>
+                            <field name="date_debut"/>
+                            <field name="date_fin"/>
+                        </group>
+                        <group>
+                            <field name="justificatif"/>
+                            <field name="description"/>
+                        </group>           
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="conge_search" model="ir.ui.view">
+        <field name="name">gestion.rh.conge.search</field>
+        <field name="model">gestion.rh.conge</field>
+        <field name="arch" type="xml">
+            <search string="conge">
+                <field name="statut_conge"/>
+                <field name="type_conge"/>
+                <field name="est_paye"/>
+                <field name="date_debut"/>
+                <field name="date_fin"/>
+                <field name="justificatif"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id='action_gestion_rh_conge' model='ir.actions.act_window'>
+        <field name='name'>Conge</field>
+        <field name='type'>ir.actions.act_window</field>
+        <field name='res_model'>gestion.rh.conge</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+</odoo>

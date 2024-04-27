@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+gestion_rh.access_gestion_rh_conge,access_gestion_rh_conge,gestion_rh.model_gestion_rh_conge,base.group_user,1,1,1,1
+gestion_rh.access_gestion_rh_departement,access_gestion_rh_departement,gestion_rh.model_gestion_rh_departement,base.group_user,1,1,1,1
+gestion_rh.access_gestion_rh_employe,access_gestion_rh_employe,gestion_rh.model_gestion_rh_employe,base.group_user,1,1,1,1
+gestion_rh.access_gestion_rh_notefrais,access_gestion_rh_notefrais,gestion_rh.model_gestion_rh_notefrais,base.group_user,1,1,1,1     
+gestion_rh.access_gestion_rh_poste,access_gestion_rh_poste,gestion_rh.model_gestion_rh_poste,base.group_user,1,1,1,1
+gestion_rh.access_gestion_rh_projet,access_gestion_rh_projet,gestion_rh.model_gestion_rh_projet,base.group_user,1,1,1,1
+gestion_rh.access_gestion_rh_contrat,access_gestion_rh_contrat,gestion_rh.model_gestion_rh_contrat,base.group_user,1,1,1,1
+

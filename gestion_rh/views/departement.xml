@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="departement_tree" model="ir.ui.view">
+        <field name="name">gestion.rh.departement.tree</field>
+        <field name="model">gestion.rh.departement</field>
+        <field name="arch" type="xml">
+            <tree string="departement">
+                <field name="name" />
+                <field name="numero_telephone"/>
+                <field name="email_contact" />
+                <field name="localisation" />
+                <field name="budget_annuel" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="departement_form" model="ir.ui.view">
+        <field name="name">gestion.rh.departement.form</field>
+        <field name="model">gestion.rh.departement</field>
+        <field name="arch" type="xml">
+            <form string="departement">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="numero_telephone"/>
+                        <field name="email_contact" />
+                    </group>       
+                </sheet>
+                <sheet>
+                    <group>
+                        <field name="localisation" />
+                        <field name="budget_annuel" />
+                    </group> 
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="departement_search" model="ir.ui.view">
+        <field name="name">gestion.rh.departement.search</field>
+        <field name="model">gestion.rh.departement</field>
+        <field name="arch" type="xml">
+            <search string="departement">
+                <field name="name" />
+                <field name="numero_telephone"/>
+                <field name="email_contact" />
+                <field name="localisation" />
+                <field name="budget_annuel" />
+            </search>
+        </field>
+    </record>
+
+
+    <record id='action_gestion_rh_departement' model='ir.actions.act_window'>
+        <field name='name'>Departement</field>
+        <field name='type'>ir.actions.act_window</field>
+        <field name='res_model'>gestion.rh.departement</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+    <record id='action_gestion_rh_projet' model='ir.actions.act_window'>
+        <field name='name'>Projet</field>
+        <field name='type'>ir.actions.act_window</field>
+        <field name='res_model'>gestion.rh.projet</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+    <menuitem id='menu_departement_root'
+              name='Departement'
+              action='action_gestion_rh_departement'
+              sequence='11'/>
+    <menuitem id='menu_departement_projet'
+            name='Projet'
+            action='action_gestion_rh_projet'
+            parent='menu_departement_root'
+            sequence='10'/>
+</odoo> 
